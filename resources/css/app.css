@@ -1,0 +1,7 @@
+.limiteTexto{
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+}
+
