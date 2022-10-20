@@ -14,8 +14,10 @@
         <img src="/imagenes/{{ $noticia->ImagenNoticia }}" class="card-img-top h-100" style="object-fit: cover" alt="...">
       </div>
       <div class="card-body">
-        <h3>{{ $noticia->Titulo }}</h3>
+        <h3 class="limiteTexto2">{{ $noticia->Titulo }}</h3>
         <p class="limiteTexto">{{ $noticia->Noticia }}</p>
+      
+
         <button type="submit" class="btn btn-light float-end" data-bs-toggle="modal" data-bs-target="#masinformacion{{ $noticia->id }}">
           Ver más
       </button>

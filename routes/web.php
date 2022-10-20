@@ -30,3 +30,11 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::resource('/usuarios', UsuariosController::class);
 
 Route::resource('/noticias', NoticiaController::class);
+
+Route::get('/soporte', function () {
+    return view('soporte');
+});
+
+Route::get('/modulos', function () {
+    return view('modulos.index');
+});

@@ -4,4 +4,73 @@
     display: -webkit-box;
     -webkit-line-clamp: 3;
 }
+.limiteTexto2{
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+}
 
+.hexagono {
+    height: 100px;
+    margin: 1.4641em 0;
+    position: relative;
+    width: 130px;
+    background-color: #6CABDD !important;
+    font-weight: 600 !important;
+  }
+
+.hexagono:before {
+    border-right:3.4641em solid transparent;
+    border-bottom:2em solid #6CABDD;
+    border-left:3.4641em solid transparent;
+    content: '';
+    height:0;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: -2em;
+    width: 127px;
+  }
+
+.hexagono:after {
+    border-top:2em solid #6CABDD;
+    border-right:3.4641em solid transparent;
+    border-left:3.4641em solid transparent;
+    bottom:-2em;
+    content: '';
+    height:0;
+    left: 0;
+    position: absolute;
+    right: 0;
+    width:127px;
+  }
+
+  .hexagono:hover{
+    background-color: #ccc !important;
+    border: 0;
+  }
+
+  .hexagono:hover::before{
+    border-bottom:2em solid #ccc;
+  }
+
+  .hexagono:hover::after{
+    border-top:2em solid #ccc;
+  }
+
+  .menu-oculto{
+    background-color: transparent !important;
+    border: 0 !important;
+    position: relative;
+    right: 10px;
+  }
+
+  .boton-modulos{
+    border-radius: 15px;
+    background-color: #6CABDD !important;
+  }
+
+  .boton-modulos:hover{
+    background-color: #ccc !important;
+  }

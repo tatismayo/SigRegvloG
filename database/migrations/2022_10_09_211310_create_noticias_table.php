@@ -17,8 +17,8 @@ return new class extends Migration
             $table->id();
             $table->string('ImagenNoticia');
             $table->string('Titulo');
-            $table->string('Noticia');
-            $table->varchar('Enlace')->nullable();
+            $table->text('Noticia');
+            $table->text('Enlace')->nullable();
             $table->date('Fecha');
             $table->foreignId('User_id')->constrained()->onUpdate('cascade');
             $table->timestamps();

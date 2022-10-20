@@ -44,10 +44,10 @@
                         </li>
                         @endcan
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('usuarios.index') }}">{{ __('Soporte') }}</a>
+                            <a class="nav-link" href="{{ url('/soporte') }}">{{ __('Soporte') }}</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('usuarios.index') }}">{{ __('Modulos') }}</a>
+                            <a class="nav-link" href="{{ url('/modulos') }}">{{ __('Modulos') }}</a>
                         </li>
                         @endguest
                     </ul>
