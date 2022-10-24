@@ -1,10 +1,14 @@
 <?php
 
+use App\Http\Controllers\DocumentoController;
 use App\Http\Controllers\NoticiaController;
 use App\Http\Controllers\UsuariosController;
+use App\Models\Documento;
 use App\Models\Noticia;
 use App\Models\User;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\URL;
 
 /*
 |--------------------------------------------------------------------------
@@ -37,4 +41,28 @@ Route::get('/soporte', function () {
 
 Route::get('/modulos', function () {
     return view('modulos.index');
+});
+
+Route::get('/modulos/{submodulo}', function () {
+    $submodulo = explode('/', URL::current())[4];
+    return view('modulos.submodulo', compact('submodulo'));
+});
+
+Route::get('/modulos/{submodulo}/{documentos}', function (Request $request) {
+    $submodulo = explode('/', URL::current())[4];
+    $tipo = explode('/', URL::current())[5];
+    $busqueda = trim($request->get('busqueda'));
+    $documentos = Documento::where('submoduloDoc', '=', $submodulo)
+                ->where('tipoDoc', '=', $tipo)
+                ->where('nombreDoc', 'LIKE','%'.$busqueda.'%')
+                ->paginate(10);
+    return view('modulos.document', compact('submodulo', 'documentos', 'tipo', 'busqueda'));
+});
+
+Route::resource('/documentos', DocumentoController::class);
+
+Route::get('/modulos/{submodulo}/{documentos}/create', function (Request $request) {
+    $submodulo = explode('/', URL::current())[4];
+    $tipo = explode('/', URL::current())[5];
+    return view('documentos.crear', compact('submodulo', 'tipo'));
 });

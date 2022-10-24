@@ -30,6 +30,13 @@ return [
 
     'disks' => [
 
+        'documentos' => [
+            'driver' => 'local',
+            'root' => storage_path('app/public/documents'),
+            'url' => env('APP_URL').'/documents',
+            'visibility' => 'public',
+        ],
+
         'imagenes' => [
             'driver' => 'local',
             'root' => storage_path('app/public/imagenes'),
@@ -78,6 +85,7 @@ return [
 
     'links' => [
         public_path('imagenes') => storage_path('app/public/imagenes'),
+        public_path('documents') => storage_path('app/public/documents'),
     ],
 
 ];
