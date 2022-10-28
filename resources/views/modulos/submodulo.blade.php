@@ -7,28 +7,28 @@
             <img class="w-25" src="/imagenes/carpeta.png" alt="icono">
             <p>Procedimientos</p>
         </a>
-        <div class="col-4">
+        <a class="col-4" href="{{ url('/modulos/'.$submodulo.'/instructivos') }}">
             <img class="w-25" src="/imagenes/carpeta.png" alt="icono">
             <p>Instructivos</p>
-        </div>
-        <div class="col-4">
+        </a>
+        <a class="col-4" href="{{ url('/modulos/'.$submodulo.'/documentos-externos') }}">
             <img class="w-25" src="/imagenes/carpeta.png" alt="icono">
             <p>Documentos externos</p>
-        </div>
+        </a>
     </div>
     <div class="row text-center fs-5 fw-bold">
-        <div class="col-4">
+        <a class="col-4" href="{{ url('/modulos/'.$submodulo.'/formatos') }}">
             <img class="w-25" src="/imagenes/carpeta.png" alt="icono">
             <p>Formatos</p>
-        </div>
-        <div class="col-4">
+        </a>
+        <a class="col-4" href="{{ url('/modulos/'.$submodulo.'/registros') }}">
             <img class="w-25" src="/imagenes/carpeta.png" alt="icono">
             <p>Registros</p>
-        </div>
-        <div class="col-4">
+        </a>
+        <a class="col-4" href="{{ url('/modulos/'.$submodulo.'/documentos-obsoletos') }}">
             <img class="w-25" src="/imagenes/carpeta.png" alt="icono">
             <p>Documentos obsoletos</p>
-        </div>
+        </a>
     </div>
 
     <div class="text-center my-5">

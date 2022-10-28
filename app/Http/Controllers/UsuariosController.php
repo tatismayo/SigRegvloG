@@ -50,6 +50,9 @@ class UsuariosController extends Controller
         $user->telefono = $request->telefono;
         $user->ciudad = $request->ciudad;
         $user->email = $request->email;
+        $request->validate([
+            'password' => 'required|confirmed|min:6'
+        ]);
         $user->password = Hash::make($request->password);
         $user->rol = $request->rol;
         $user->area = $request->area;

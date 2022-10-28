@@ -57,7 +57,7 @@ Route::get('/modulos/{submodulo}/{documentos}', function (Request $request) {
                 ->where('nombreDoc', 'LIKE','%'.$busqueda.'%')
                 ->paginate(10);
     return view('modulos.document', compact('submodulo', 'documentos', 'tipo', 'busqueda'));
-});
+})->name('documentos');
 
 Route::resource('/documentos', DocumentoController::class);
 

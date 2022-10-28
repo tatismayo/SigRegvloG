@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Documento;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
 
 class DocumentoController extends Controller
 {
@@ -38,7 +39,7 @@ class DocumentoController extends Controller
         $documento = new Documento();
         $documento->nombreDoc = $request->nombre;
         $request->validate([
-            'documento' => 'mimes:pdf,docx,doc|max:2048'
+            'documento' => 'mimes:pdf,doc,pptx,xlsx'
         ]);
         $documento->rutaDoc = $request->documento->store('','documentos');
         $documento->fechaDoc = now();
@@ -46,7 +47,7 @@ class DocumentoController extends Controller
         $documento->tipoDoc = $request->tipo;
         $documento->estadoDoc = 'Pendiente Revisión';
         $documento->save();
-        return url('/modulos/'.$request->submodulo.'/'.$request->tipo);
+        return Redirect::route('documentos', [$request->submodulo, $request->tipo]);
     }
 
     /**
@@ -54,6 +55,7 @@ class DocumentoController extends Controller
      *
      * @param  \App\Models\Documento  $documento
      * @return \Illuminate\Http\Response
+     * .0
      */
     public function show(Documento $documento)
     {

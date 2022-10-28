@@ -16,4 +16,8 @@
 @foreach ($documentos as $documento)
    <a href="/documents/{{$documento->rutaDoc}}">{{ $documento->nombreDoc}}</a>
 @endforeach
+
+<div class="text-center my-5">
+    <button type="button" class="btn btn-primary" onclick="window.history.back();">Volver</button>
+</div>
 @endsection
