@@ -13,9 +13,92 @@
     </form>
     <a type="button" class="btn btn-primary" href="{{ url('/modulos/'.$submodulo.'/'.$tipo.'/create') }}">Añadir</a>
 </div>
-@foreach ($documentos as $documento)
-   <a href="/documents/{{$documento->rutaDoc}}">{{ $documento->nombreDoc}}</a>
-@endforeach
+
+<div class="row mt-5">
+    <div class="row col-11 mx-auto">
+        <div class="col-3 enlace-documentos">
+            @foreach ($documentos as $documento)
+            @if ($loop->index < 10)
+            <div class="d-flex">
+                <a href="/documents/{{$documento->rutaDoc}}">
+                @if (explode('.',$documento->rutaDoc)[1] == 'pdf')
+                <img src="/imagenes/logos_archivos/pdf.png" height="40px" width="40">
+                @elseif (explode('.',$documento->rutaDoc)[1] == 'xlsx')
+                <img src="/imagenes/logos_archivos/excel.png" height="40px" width="40">
+                @elseif (explode('.',$documento->rutaDoc)[1] == 'pptx')
+                <img src="/imagenes/logos_archivos/point.png" height="40px" width="40">
+                @elseif (explode('.',$documento->rutaDoc)[1] == 'docx')
+                <img src="/imagenes/logos_archivos/word.png" height="40px" width="40">
+                @endif
+                {{ $documento->nombreDoc}}{{$loop->index}}</a>
+            </div>
+            @endif
+            @endforeach
+        </div>
+        <div class="col-3 enlace-documentos">
+            @foreach ($documentos as $documento)
+            @if ($loop->index > 9 && $loop->index < 20)
+            <div class="d-flex">
+                <a href="/documents/{{$documento->rutaDoc}}">
+                @if (explode('.',$documento->rutaDoc)[1] == 'pdf')
+                <img src="/imagenes/logos_archivos/pdf.png" height="40px" width="40">
+                @elseif (explode('.',$documento->rutaDoc)[1] == 'xlsx')
+                <img src="/imagenes/logos_archivos/excel.png" height="40px" width="40">
+                @elseif (explode('.',$documento->rutaDoc)[1] == 'pptx')
+                <img src="/imagenes/logos_archivos/point.png" height="40px" width="40">
+                @elseif (explode('.',$documento->rutaDoc)[1] == 'docx')
+                <img src="/imagenes/logos_archivos/word.png" height="40px" width="40">
+                @endif
+                {{ $documento->nombreDoc}}{{$loop->index}}</a>
+            </div>
+            @endif
+            @endforeach
+        </div>
+        <div class="col-3 enlace-documentos">
+            @foreach ($documentos as $documento)
+            @if ($loop->index > 19 && $loop->index < 30)
+            <div class="d-flex">
+                <a href="/documents/{{$documento->rutaDoc}}">
+                @if (explode('.',$documento->rutaDoc)[1] == 'pdf')
+                <img src="/imagenes/logos_archivos/pdf.png" height="40px" width="40">
+                @elseif (explode('.',$documento->rutaDoc)[1] == 'xlsx')
+                <img src="/imagenes/logos_archivos/excel.png" height="40px" width="40">
+                @elseif (explode('.',$documento->rutaDoc)[1] == 'pptx')
+                <img src="/imagenes/logos_archivos/point.png" height="40px" width="40">
+                @elseif (explode('.',$documento->rutaDoc)[1] == 'docx')
+                <img src="/imagenes/logos_archivos/word.png" height="40px" width="40">
+                @endif
+                {{ $documento->nombreDoc}}{{$loop->index}}</a>
+            </div>
+            @endif
+            @endforeach
+        </div>
+        <div class="col-3 enlace-documentos">
+            @foreach ($documentos as $documento)
+            @if ($loop->index > 29 && $loop->index < 40)
+            <div class="d-flex">
+                <a href="/documents/{{$documento->rutaDoc}}">
+                @if (explode('.',$documento->rutaDoc)[1] == 'pdf')
+                <img src="/imagenes/logos_archivos/pdf.png" height="40px" width="40">
+                @elseif (explode('.',$documento->rutaDoc)[1] == 'xlsx')
+                <img src="/imagenes/logos_archivos/excel.png" height="40px" width="40">
+                @elseif (explode('.',$documento->rutaDoc)[1] == 'pptx')
+                <img src="/imagenes/logos_archivos/point.png" height="40px" width="40">
+                @elseif (explode('.',$documento->rutaDoc)[1] == 'docx')
+                <img src="/imagenes/logos_archivos/word.png" height="40px" width="40">
+                @endif
+                {{ $documento->nombreDoc}}{{$loop->index}}</a>
+            </div>
+            @endif
+            @endforeach
+        </div>
+        
+    </div>
+</div>
+
+<div class="d-flex justify-content-center">
+    {{ $documentos->links() }}
+</div>
 
 <div class="text-center my-5">
     <button type="button" class="btn btn-primary" onclick="window.history.back();">Volver</button>

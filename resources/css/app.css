@@ -98,3 +98,13 @@
     .modal-caracterizacion{
       max-width: 75% !important;
     }
+
+    .enlace-documentos{
+      background-color: rgba(255, 255, 255, .7);
+    }
+
+    .enlace-documentos a{
+      text-decoration: none;
+      color: black;
+      font-weight: 700;
+    }
