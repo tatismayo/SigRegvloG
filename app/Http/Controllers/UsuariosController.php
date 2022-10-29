@@ -22,7 +22,7 @@ class UsuariosController extends Controller
      */
     public function index()
     {
-        $usuarios = User::all();
+        $usuarios = User::paginate(10);
         return view('usuarios.index', compact('usuarios'));
     }
 
