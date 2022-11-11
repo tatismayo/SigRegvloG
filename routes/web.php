@@ -66,3 +66,5 @@ Route::get('/modulos/{submodulo}/{documentos}/create', function (Request $reques
     $tipo = explode('/', URL::current())[5];
     return view('documentos.crear', compact('submodulo', 'tipo'));
 });
+
+Route::post('/contactar', [App\Http\Controllers\SoporteController::class, 'contact'])->name('contact');

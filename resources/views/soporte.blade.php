@@ -7,7 +7,8 @@
         <div class="card-header ">
             <h5>Contacta con nosotros.</h5>
         </div>
-        <form class="my-3" action="">
+        <form class="my-3" action={{route('contact')}} method="POST">
+        {{ csrf_field() }}
             <div class="row mb-3">
                 <label for="nombre" class="col-md-4 col-form-label text-md-end">{{ __('Nombre') }}</label>
 
@@ -68,7 +69,7 @@
                 </div>
             </div>
 
-            <div class="row mb-3">
+            {{-- <div class="row mb-3">
                 <label for="evidencia" class="col-md-4 col-form-label text-md-end">{{ __('Adjuntar imagen de error') }}</label>
 
                 <div class="col-md-6">
@@ -82,7 +83,7 @@
                         </span>
                     @enderror
                 </div>
-            </div>
+            </div> --}}
 
             <div class="row mb-0">
                 <div class="col-md-6 offset-md-4 text-center">
