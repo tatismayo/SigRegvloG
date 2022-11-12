@@ -16,7 +16,7 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         \App\Models\User::factory()->create([
-            'name' => 'ADMIN',
+            'name' => 'Administrador - Tatiana Marin Sepulveda',
             'cedula' => '1060649566',
             'telefono' => '3176373673',
             'ciudad' => 'Manizales',

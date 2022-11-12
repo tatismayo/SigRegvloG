@@ -16,7 +16,7 @@
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 </head>
-<body style="background-image: url('/imagenes/fondologin.png'); background-repeat:no-repeat; background-size: 100% 100%; height: 100vh; background-attachment: fixed;">
+<body style="background-image: url('/imagenes/fondologin.png'); background-repeat:no-repeat; background-size: 100% 100%; height: 100vh; background-attachment: fixed; overflow-x:hidden;">
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">

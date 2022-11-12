@@ -37,16 +37,16 @@ Route::resource('/noticias', NoticiaController::class);
 
 Route::get('/soporte', function () {
     return view('soporte');
-});
+})->middleware('auth');
 
 Route::get('/modulos', function () {
     return view('modulos.index');
-});
+})->middleware('auth');
 
 Route::get('/modulos/{submodulo}', function () {
     $submodulo = explode('/', URL::current())[4];
     return view('modulos.submodulo', compact('submodulo'));
-});
+})->middleware('auth');
 
 Route::get('/modulos/{submodulo}/{documentos}', function (Request $request) {
     $submodulo = explode('/', URL::current())[4];
@@ -54,10 +54,11 @@ Route::get('/modulos/{submodulo}/{documentos}', function (Request $request) {
     $busqueda = trim($request->get('busqueda'));
     $documentos = Documento::where('submoduloDoc', '=', $submodulo)
                 ->where('tipoDoc', '=', $tipo)
+                ->where('estadoDoc', '!=', 'Pendiente Revisión')
                 ->where('nombreDoc', 'LIKE','%'.$busqueda.'%')
                 ->paginate(40);
     return view('modulos.document', compact('submodulo', 'documentos', 'tipo', 'busqueda'));
-})->name('documentos');
+})->name('documentos')->middleware('auth');
 
 Route::resource('/documentos', DocumentoController::class);
 
@@ -67,4 +68,19 @@ Route::get('/modulos/{submodulo}/{documentos}/create', function (Request $reques
     return view('documentos.crear', compact('submodulo', 'tipo'));
 });
 
+Route::get('/modulos/{submodulo}/{documentos}/revisar', function (Request $request) {
+    $submodulo = explode('/', URL::current())[4];
+    $tipo = explode('/', URL::current())[5];
+    $busqueda = trim($request->get('busqueda'));
+    $documentos = Documento::where('submoduloDoc', '=', $submodulo)
+                ->where('tipoDoc', '=', $tipo)
+                ->where('estadoDoc', '=', 'Pendiente Revisión')
+                ->where('nombreDoc', 'LIKE','%'.$busqueda.'%')
+                ->paginate(40);
+    return view('documentos.revisar', compact('submodulo', 'documentos', 'tipo', 'busqueda'));
+})->middleware('admin');
+
+
 Route::post('/contactar', [App\Http\Controllers\SoporteController::class, 'contact'])->name('contact');
+
+Route::put('/obsoleto/{documento}', [App\Http\Controllers\DocumentoController::class, 'obsoleto'])->name('obsoleto');

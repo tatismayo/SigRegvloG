@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Documento;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Redirect;
 
 class DocumentoController extends Controller
@@ -39,15 +41,33 @@ class DocumentoController extends Controller
         $documento = new Documento();
         $documento->nombreDoc = $request->nombre;
         $request->validate([
-            'documento' => 'mimes:pdf,doc,pptx,xlsx'
+            'documento' => 'mimes:pdf,doc,docx,pptx,xlsx'
         ]);
         $documento->rutaDoc = $request->documento->store('','documentos');
         $documento->fechaDoc = now();
         $documento->submoduloDoc = $request->submodulo;
         $documento->tipoDoc = $request->tipo;
         $documento->estadoDoc = 'Pendiente Revisión';
+        $documento->User_id = auth()->id();
         $documento->save();
-        return Redirect::route('documentos', [$request->submodulo, $request->tipo]);
+
+        $subject = "Nuevo documento cargado";
+        $for = "tatismayo@hotmail.com";
+        Mail::send('mail.docAdmin',$request->all(), function($msj) use($subject,$for){
+            $msj->from("tatismayo@gmail.com","Notificaciones Sig Revlog");
+            $msj->subject($subject);
+            $msj->to($for);
+        });
+
+        $subject = "Su documento esta pendiente de aprobación";
+        $for = User::find(auth()->id())->email;
+        Mail::send('mail.docUser',$request->all(), function($msj) use($subject,$for){
+            $msj->from("tatismayo@gmail.com","Notificaciones Sig Revlog");
+            $msj->subject($subject);
+            $msj->to($for);
+        });
+
+        return Redirect::route('documentos', [$request->submodulo, $request->tipo])->with('success', 'Documento cargado exitosamente');
     }
 
     /**
@@ -82,7 +102,23 @@ class DocumentoController extends Controller
      */
     public function update(Request $request, Documento $documento)
     {
-        //
+        $documento->estadoDoc = 'Aprobado';
+        $documento->save();
+        $subject = "Su documento ha sido aprobado con éxito";
+        $for = User::find($documento->User_id)->email;
+        Mail::send('mail.docAprob',$request->all(), function($msj) use($subject,$for){
+            $msj->from("tatismayo@gmail.com","Notificaciones Sig Revlog");
+            $msj->subject($subject);
+            $msj->to($for);
+        });
+        return redirect()->back()->with('success', 'Documento aprobado exitosamente');
+    }
+
+    public function obsoleto(Request $request, Documento $documento)
+    {
+        $documento->tipoDoc = $documento->tipoDoc.'Obsoleto';
+        $documento->save();
+        
     }
 
     /**
@@ -91,8 +127,17 @@ class DocumentoController extends Controller
      * @param  \App\Models\Documento  $documento
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Documento $documento)
+    public function destroy(Request $request, Documento $documento)
     {
-        //
+        $documento->delete();
+
+        $subject = "El documento ha sido rechazado";
+        $for = User::find($documento->User_id)->email;
+        Mail::send('mail.docRechazo',$request->all(), function($msj) use($subject,$for){
+            $msj->from("tatismayo@gmail.com","Notificaciones Sig Revlog");
+            $msj->subject($subject);
+            $msj->to($for);
+        });
+        return redirect()->back()->with('success', 'Documento Rechazado');
     }
 }

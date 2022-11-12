@@ -1,0 +1,1 @@
+<h2>El documento se rechazo con la siguiente observación: {{$rechazo}}</h2>

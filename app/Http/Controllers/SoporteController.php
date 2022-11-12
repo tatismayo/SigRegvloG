@@ -11,10 +11,10 @@ class SoporteController extends Controller
         $subject = "Nueva PQR";
         $for = "tatismayo@hotmail.com";
         FacadesMail::send('mail.soporte',$request->all(), function($msj) use($subject,$for){
-            $msj->from("tatismayo@gmail.com","SigRegvloG");
+            $msj->from("tatismayo@gmail.com","Soporte Sig RegvloG");
             $msj->subject($subject);
             $msj->to($for);
         });
-        return redirect()->back();
+        return redirect()->back()->with('success', 'Su PQR a sido enviada con exito');
     }
 }

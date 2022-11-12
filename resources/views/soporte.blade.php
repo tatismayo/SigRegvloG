@@ -2,6 +2,8 @@
 
 @section('content')
 
+@include('alert')
+
 <div class="container">
     <div class="card">
         <div class="card-header ">

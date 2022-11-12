@@ -34,5 +34,10 @@ class AuthServiceProvider extends ServiceProvider
         Gate::define('view-noticias', function ($user) {
             return $user->area == 'Gestión humana' or $user->area == 'Sig' or $user->area == 'Sistemas';
         });
+
+        Gate::define('view-gestor', function ($user) {
+            return $user->rol == 'Administrador' or $user->rol == 'Gestor';
+        });
+        
     }
 }

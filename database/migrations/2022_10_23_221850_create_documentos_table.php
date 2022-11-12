@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('submoduloDoc');
             $table->string('tipoDoc');
             $table->string('estadoDoc');
+            $table->foreignId('User_id')->constrained();
             $table->timestamps();
         });
     }
