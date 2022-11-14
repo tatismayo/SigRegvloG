@@ -118,7 +118,7 @@ class DocumentoController extends Controller
     {
         $documento->tipoDoc = $documento->tipoDoc.'Obsoleto';
         $documento->save();
-        
+        return redirect()->back()->with('success', 'Documento marcado como obsoleto');
     }
 
     /**
