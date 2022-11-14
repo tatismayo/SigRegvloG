@@ -84,3 +84,7 @@ Route::get('/modulos/{submodulo}/{documentos}/revisar', function (Request $reque
 Route::post('/contactar', [App\Http\Controllers\SoporteController::class, 'contact'])->name('contact');
 
 Route::put('/obsoleto/{documento}', [App\Http\Controllers\DocumentoController::class, 'obsoleto'])->name('obsoleto');
+
+Route::get('/unauthorized401', function() {
+    return view('errors.401');
+});
