@@ -42,12 +42,13 @@
                             </div>
                         </div>
 
+                        <input id="modulo" type="text" name="modulo" value="{{ $modulo }}" hidden>
                         <input id="submodulo" type="text" name="submodulo" value="{{ $submodulo }}" hidden>
                         <input id="tipo" type="text" name="tipo" value="{{ $tipo }}" hidden>
 
                         <div class="row mb-0">
                             <div class="col-md-6 offset-md-4 text-center">
-                                <a href="{{ url('/modulos/'.$submodulo.'/'.$tipo) }}" class="btn btn-secondary">Volver</a>
+                                <a href="{{ url('/modulos/'.$modulo.'/'.$submodulo.'/'.$tipo) }}" class="btn btn-secondary">Volver</a>
                                 <button type="submit" class="btn btn-primary">
                                     {{ __('Adjuntar') }}
                                 </button>

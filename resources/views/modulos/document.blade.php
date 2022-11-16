@@ -3,20 +3,20 @@
 @section('content')
 
 <div class="d-flex justify-content-center">
-    <form action="{{ url('/modulos/'.$submodulo.'/'.$tipo) }}" method="get" class="d-flex">
+    <form action="{{ url('/modulos/'.$modulo.'/'.$submodulo.'/'.$tipo) }}" method="get" class="d-flex">
         <label for="busqueda" class="col-form-label fs-5">Filtro</label>
         <input type="text" class="form-control mx-3" name="busqueda" value="{{ $busqueda }}"
             placeholder="Nombre Documento">
         <input type="submit" class="btn btn-success" value="Buscar">
     </form>
-    <form action="{{ url('/modulos/'.$submodulo.'/'.$tipo) }}" method="get" class="d-flex">
+    <form action="{{ url('/modulos/'.$modulo.'/'.$submodulo.'/'.$tipo) }}" method="get" class="d-flex">
         <input type="submit" class="btn btn-secondary mx-3" value="Limpiar">
     </form>
     @can('view-gestor')
-    <a type="button" class="btn btn-primary" href="{{ url('/modulos/'.$submodulo.'/'.$tipo.'/create') }}">Añadir</a>
+    <a type="button" class="btn btn-primary" href="{{ url('/modulos/'.$modulo.'/'.$submodulo.'/'.$tipo.'/create') }}">Añadir</a>
     @endcan
     @can('view-admin')
-    <a type="button" class="btn btn-warning mx-3" href="{{ url('/modulos/'.$submodulo.'/'.$tipo.'/revisar') }}">Doc. Pendientes</a>
+    <a type="button" class="btn btn-warning mx-3" href="{{ url('/modulos/'.$modulo.'/'.$submodulo.'/'.$tipo.'/revisar') }}">Doc. Pendientes</a>
     @endcan
 </div>
 
@@ -119,6 +119,6 @@
 </div>
 
 <div class="text-center my-5">
-    <a type="button" href="{{ url('/modulos/'.$submodulo) }}" class="btn btn-primary">Volver</a>
+    <a type="button" href="{{ url('/modulos/'.$modulo.'/'.$submodulo) }}" class="btn btn-primary">Volver</a>
 </div>
 @endsection

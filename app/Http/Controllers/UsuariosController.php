@@ -55,7 +55,11 @@ class UsuariosController extends Controller
         ]);
         $user->password = Hash::make($request->password);
         $user->rol = $request->rol;
-        $user->area = $request->area;
+        $procesos = '';
+        foreach($request->procesos as $item){
+            $procesos = $procesos.$item.'|';
+        }
+        $user->area = $procesos;
         $user->save();
         return Redirect::route('usuarios.index');
     }
@@ -97,7 +101,11 @@ class UsuariosController extends Controller
         $usuario->ciudad = $request->ciudad;
         $usuario->email = $request->email;
         $usuario->rol = $request->rol;
-        $usuario->area = $request->area;
+        $procesos = '';
+        foreach($request->procesos as $item){
+            $procesos = $procesos.$item.'|';
+        }
+        $usuario->area = $procesos;
         $usuario->save();
         return Redirect::route('usuarios.index');
     }

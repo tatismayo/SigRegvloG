@@ -68,7 +68,7 @@ class DocumentoController extends Controller
         //     $msj->to($for);
         // });
 
-        return Redirect::route('documentos', [$request->submodulo, $request->tipo])->with('success', 'Documento cargado exitosamente');
+        return Redirect::route('documentos', [$request->modulo, $request->submodulo, $request->tipo])->with('success', 'Documento cargado exitosamente');
     }
 
     /**

@@ -15,10 +15,10 @@
         </a>
         <ul class="dropdown-menu dropdown-submenu menu-oculto">
           <li>
-            <a class="dropdown-item boton-modulos my-1 text-wrap" href="{{ url('/modulos/control-interno-y-riesgos') }}">Control interno y riesgos</a>
+            <a class="dropdown-item boton-modulos my-1 text-wrap" href="{{ url('/modulos/Evaluacionycontrol/control-interno-y-riesgos') }}">Control interno y riesgos</a>
           </li>
           <li>
-            <a class="dropdown-item boton-modulos text-wrap" href="{{ url('/modulos/auditoria-sistemas-de-gestion')}} ">Auditoria sistemas de gestión</a>
+            <a class="dropdown-item boton-modulos text-wrap" href="{{ url('/modulos/Evaluacionycontrol/auditoria-sistemas-de-gestion')}} ">Auditoria sistemas de gestión</a>
           </li>
         </ul>
       </li>
@@ -39,16 +39,16 @@
           </a>
           <ul class="dropdown-menu dropdown-submenu-left menu-oculto w-100">
             <li>
-              <a class="dropdown-item boton-modulos my-1 text-wrap" href="{{ url('/modulos/planeacion-estrategica') }}">Planeación Estratégica</a>
+              <a class="dropdown-item boton-modulos my-1 text-wrap" href="{{ url('/modulos/Gestionestrategica/planeacion-estrategica') }}">Planeación Estratégica</a>
             </li>
             <li>
-              <a class="dropdown-item boton-modulos text-wrap" href="{{ url('/modulos/seguimiento-estrategia-bsc')}} ">Seguimiento Estrategia BSC</a>
+              <a class="dropdown-item boton-modulos text-wrap" href="{{ url('/modulos/Gestionestrategica/seguimiento-estrategia-bsc')}} ">Seguimiento Estrategia BSC</a>
             </li>
             <li>
-              <a class="dropdown-item boton-modulos my-1 text-wrap" href="{{ url('/modulos/planeacion-financiera-e-inversiones') }}">Planeación Financiera e Inversiones</a>
+              <a class="dropdown-item boton-modulos my-1 text-wrap" href="{{ url('/modulos/Gestionestrategica/planeacion-financiera-e-inversiones') }}">Planeación Financiera e Inversiones</a>
             </li>
             <li>
-              <a class="dropdown-item boton-modulos text-wrap" href="{{ url('/modulos/desarrollo-humano-&-organizacional')}} ">Desarrollo Humano & Organizacional</a>
+              <a class="dropdown-item boton-modulos text-wrap" href="{{ url('/modulos/Gestionestrategica/desarrollo-humano-&-organizacional')}} ">Desarrollo Humano & Organizacional</a>
             </li>
           </ul>
         </li>
@@ -67,16 +67,16 @@
           </a>
           <ul class="dropdown-menu dropdown-submenu menu-oculto">
             <li>
-              <a class="dropdown-item boton-modulos my-1 text-wrap" href="{{ url('/modulos/protocolos-de-familia') }}">Protocolos de Familia</a>
+              <a class="dropdown-item boton-modulos my-1 text-wrap" href="{{ url('/modulos/Gobiernocorporativo/protocolos-de-familia') }}">Protocolos de Familia</a>
             </li>
             <li>
-              <a class="dropdown-item boton-modulos text-wrap" href="{{ url('/modulos/comites-mecanismos-de-integracion')}} ">Comités / Mecanismos de integración</a>
+              <a class="dropdown-item boton-modulos text-wrap" href="{{ url('/modulos/Gobiernocorporativo/comites-mecanismos-de-integracion')}} ">Comités / Mecanismos de integración</a>
             </li>
             <li>
-              <a class="dropdown-item boton-modulos my-1 text-wrap" href="{{ url('/modulos/estrategia-de-sostenibilidad') }}">Estrategia de Sostenibilidad</a>
+              <a class="dropdown-item boton-modulos my-1 text-wrap" href="{{ url('/modulos/Gobiernocorporativo/estrategia-de-sostenibilidad') }}">Estrategia de Sostenibilidad</a>
             </li>
             <li>
-              <a class="dropdown-item boton-modulos text-wrap" href="{{ url('/modulos/lineamientos-grupos-de-interes')}} ">Lineamientos Grupos de Interés</a>
+              <a class="dropdown-item boton-modulos text-wrap" href="{{ url('/modulos/Gobiernocorporativo/lineamientos-grupos-de-interes')}} ">Lineamientos Grupos de Interés</a>
             </li>
           </ul>
         </li>
@@ -97,19 +97,19 @@
           </a>
           <ul class="dropdown-menu dropdown-submenu-left menu-oculto w-100">
             <li>
-              <a class="dropdown-item boton-modulos my-1 text-wrap" href="{{ url('/modulos/implementacion-de-proyectos') }}">Implementación de Proyectos</a>
+              <a class="dropdown-item boton-modulos my-1 text-wrap" href="{{ url('/modulos/Gestionproyectosoperaciones/implementacion-de-proyectos') }}">Implementación de Proyectos</a>
             </li>
             <li>
-              <a class="dropdown-item boton-modulos text-wrap" href="{{ url('/modulos/ejecucion-y-seguimiento')}} ">Ejecución y Seguimiento</a>
+              <a class="dropdown-item boton-modulos text-wrap" href="{{ url('/modulos/Gestionproyectosoperaciones/ejecucion-y-seguimiento')}} ">Ejecución y Seguimiento</a>
             </li>
             <li>
-              <a class="dropdown-item boton-modulos my-1 text-wrap" href="{{ url('/modulos/servicio-al-cliente-post') }}">Servicio al Cliente POST</a>
+              <a class="dropdown-item boton-modulos my-1 text-wrap" href="{{ url('/modulos/Gestionproyectosoperaciones/servicio-al-cliente-post') }}">Servicio al Cliente POST</a>
             </li>
             <li>
-              <a class="dropdown-item boton-modulos text-wrap" href="{{ url('/modulos/administrar-proveedores-y-aliados-de-la-operacion')}} ">Administrar Proveedores y Aliados de la Operación</a>
+              <a class="dropdown-item boton-modulos text-wrap" href="{{ url('/modulos/Gestionproyectosoperaciones/administrar-proveedores-y-aliados-de-la-operacion')}} ">Administrar Proveedores y Aliados de la Operación</a>
             </li>
             <li>
-              <a class="dropdown-item boton-modulos my-1 text-wrap" href="{{ url('/modulos/mantenimiento-e-infraestructura')}} ">Mantenimiento e Infraestructura</a>
+              <a class="dropdown-item boton-modulos my-1 text-wrap" href="{{ url('/modulos/Gestionproyectosoperaciones/mantenimiento-e-infraestructura')}} ">Mantenimiento e Infraestructura</a>
             </li>
           </ul>
         </li>
@@ -132,28 +132,28 @@
           </a>
           <ul class="dropdown-menu dropdown-submenu menu-oculto">
             <li>
-              <a class="dropdown-item boton-modulos my-1 text-wrap" href="{{ url('/modulos/investigacion-de-mercado') }}">Investigación de Mercado</a>
+              <a class="dropdown-item boton-modulos my-1 text-wrap" href="{{ url('/modulos/Gestioncomercial/investigacion-de-mercado') }}">Investigación de Mercado</a>
             </li>
             <li>
-              <a class="dropdown-item boton-modulos text-wrap" href="{{ url('/modulos/relacionamiento-clientes')}} ">Relacionamiento Clientes</a>
+              <a class="dropdown-item boton-modulos text-wrap" href="{{ url('/modulos/Gestioncomercial/relacionamiento-clientes')}} ">Relacionamiento Clientes</a>
             </li>
             <li>
-              <a class="dropdown-item boton-modulos my-1 text-wrap" href="{{ url('/modulos/consultoria') }}">Consultoria</a>
+              <a class="dropdown-item boton-modulos my-1 text-wrap" href="{{ url('/modulos/Gestioncomercial/consultoria') }}">Consultoria</a>
             </li>
             <li>
-              <a class="dropdown-item boton-modulos text-wrap" href="{{ url('/modulos/diseño-de-proyectos')}} ">Diseño de Proyectos</a>
+              <a class="dropdown-item boton-modulos text-wrap" href="{{ url('/modulos/Gestioncomercial/diseño-de-proyectos')}} ">Diseño de Proyectos</a>
             </li>
             <li>
-              <a class="dropdown-item boton-modulos my-1 text-wrap" href="{{ url('/modulos/propuesta-y-negociacion') }}">Propuesta y Negociación</a>
+              <a class="dropdown-item boton-modulos my-1 text-wrap" href="{{ url('/modulos/Gestioncomercial/propuesta-y-negociacion') }}">Propuesta y Negociación</a>
             </li>
             <li>
-              <a class="dropdown-item boton-modulos text-wrap" href="{{ url('/modulos/pricing-de-servicios-front')}} ">Pricing de Servicios Front</a>
+              <a class="dropdown-item boton-modulos text-wrap" href="{{ url('/modulos/Gestioncomercial/pricing-de-servicios-front')}} ">Pricing de Servicios Front</a>
             </li>
             <li>
-              <a class="dropdown-item boton-modulos my-1 text-wrap" href="{{ url('/modulos/servicio-al-cliente') }}">Servicio al Cliente</a>
+              <a class="dropdown-item boton-modulos my-1 text-wrap" href="{{ url('/modulos/Gestioncomercial/servicio-al-cliente') }}">Servicio al Cliente</a>
             </li>
             <li>
-              <a class="dropdown-item boton-modulos text-wrap" href="{{ url('/modulos/gestion-de-cartera-y-cobro')}} ">Gestión de Cartera y Cobro</a>
+              <a class="dropdown-item boton-modulos text-wrap" href="{{ url('/modulos/Gestioncomercial/gestion-de-cartera-y-cobro')}} ">Gestión de Cartera y Cobro</a>
             </li>
           </ul>
         </li>
@@ -174,25 +174,25 @@
           </a>
           <ul class="dropdown-menu dropdown-submenu-left menu-oculto w-100">
             <li>
-              <a class="dropdown-item boton-modulos my-1 text-wrap" href="{{ url('/modulos/contabilidad') }}">Contabilidad</a>
+              <a class="dropdown-item boton-modulos my-1 text-wrap" href="{{ url('/modulos/Gestionadministrativayfinanciera/contabilidad') }}">Contabilidad</a>
             </li>
             <li>
-              <a class="dropdown-item boton-modulos text-wrap" href="{{ url('/modulos/tesoreria')}} ">Tesorería</a>
+              <a class="dropdown-item boton-modulos text-wrap" href="{{ url('/modulos/Gestionadministrativayfinanciera/tesoreria')}} ">Tesorería</a>
             </li>
             <li>
-              <a class="dropdown-item boton-modulos my-1 text-wrap" href="{{ url('/modulos/facturacion') }}">Facturación</a></a>
+              <a class="dropdown-item boton-modulos my-1 text-wrap" href="{{ url('/modulos/Gestionadministrativayfinanciera/facturacion') }}">Facturación</a></a>
             </li>
             <li>
-              <a class="dropdown-item boton-modulos text-wrap" href="{{ url('/modulos/gestion-de-compras')}} ">Gestión de Compras</a>
+              <a class="dropdown-item boton-modulos text-wrap" href="{{ url('/modulos/Gestionadministrativayfinanciera/gestion-de-compras')}} ">Gestión de Compras</a>
             </li>
             <li>
-              <a class="dropdown-item boton-modulos my-1 text-wrap" href="{{ url('/modulos/administracion-personal')}} ">Administración Personal</a>
+              <a class="dropdown-item boton-modulos my-1 text-wrap" href="{{ url('/modulos/Gestionadministrativayfinanciera/administracion-personal')}} ">Administración Personal</a>
             </li>
             <li>
-              <a class="dropdown-item boton-modulos text-wrap" href="{{ url('/modulos/gestion-juridica')}} ">Gestión jurídica</a>
+              <a class="dropdown-item boton-modulos text-wrap" href="{{ url('/modulos/Gestionadministrativayfinanciera/gestion-juridica')}} ">Gestión jurídica</a>
             </li>
             <li>
-              <a class="dropdown-item boton-modulos my-1 text-wrap" href="{{ url('/modulos/gestion-administrativa')}} ">Gestión Administrativa</a>
+              <a class="dropdown-item boton-modulos my-1 text-wrap" href="{{ url('/modulos/Gestionadministrativayfinanciera/gestion-administrativa')}} ">Gestión Administrativa</a>
             </li>
           </ul>
         </li>
@@ -211,19 +211,19 @@
           </a>
           <ul class="dropdown-menu dropdown-submenu menu-oculto">
             <li>
-              <a class="dropdown-item boton-modulos my-1 text-wrap" href="{{ url('/modulos/vigilancia-estrategica') }}">Vigilancia Estratégica</a>
+              <a class="dropdown-item boton-modulos my-1 text-wrap" href="{{ url('/modulos/Innovacionytecnologia/vigilancia-estrategica') }}">Vigilancia Estratégica</a>
             </li>
             <li>
-              <a class="dropdown-item boton-modulos text-wrap" href="{{ url('/modulos/desarrollo-e-implementacion-de-servicios-y-portafolio')}} ">Desarrollo e Implementación de Servicios y Portafolio</a>
+              <a class="dropdown-item boton-modulos text-wrap" href="{{ url('/modulos/Innovacionytecnologia/desarrollo-e-implementacion-de-servicios-y-portafolio')}} ">Desarrollo e Implementación de Servicios y Portafolio</a>
             </li>
             <li>
-              <a class="dropdown-item boton-modulos my-1 text-wrap" href="{{ url('/modulos/gestion-de-tecnologia-y-ciencia-de-datos') }}">Gestión de Tecgología y ciencia de datos</a>
+              <a class="dropdown-item boton-modulos my-1 text-wrap" href="{{ url('/modulos/Innovacionytecnologia/gestion-de-tecnologia-y-ciencia-de-datos') }}">Gestión de Tecgología y ciencia de datos</a>
             </li>
             <li>
-              <a class="dropdown-item boton-modulos text-wrap" href="{{ url('/modulos/gestion-de-alianzas-i&ti')}} ">Gestión de Alianzas para I&TI</a>
+              <a class="dropdown-item boton-modulos text-wrap" href="{{ url('/modulos/Innovacionytecnologia/gestion-de-alianzas-i&ti')}} ">Gestión de Alianzas para I&TI</a>
             </li>
             <li>
-              <a class="dropdown-item boton-modulos my-1 text-wrap" href="{{ url('/modulos/gestion-de-conocimiento') }}">Gestión de Conocimiento</a>
+              <a class="dropdown-item boton-modulos my-1 text-wrap" href="{{ url('/modulos/Innovacionytecnologia/gestion-de-conocimiento') }}">Gestión de Conocimiento</a>
             </li>
           </ul>
         </li>

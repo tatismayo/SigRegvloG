@@ -289,6 +289,6 @@
 </div>
 
 <div class="text-center my-5">
-    <a type="button" href="{{ url('/modulos/'.$submodulo.'/'.$tipo) }}" class="btn btn-primary">Volver</a>
+    <a type="button" href="{{ url('/modulos/'.$modulo.'/'.$submodulo.'/'.$tipo) }}" class="btn btn-primary">Volver</a>
 </div>
 @endsection

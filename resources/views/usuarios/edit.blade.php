@@ -101,28 +101,37 @@
                         </div>
 
                         <div class="row mb-3">
-                            <label for="area" class="col-md-4 col-form-label text-md-end">{{ __('Área') }}</label>
+                            <label for="procesos" class="col-md-4 col-form-label text-md-end">{{ __('Procesos') }}</label>
 
                             <div class="col-md-6">
-                                <select class="form-control" id="area" class="form-control @error('area') is-invalid @enderror" name="area" required>
-                                    <option value="Gestión humana">Gestión humana</option>
-                                    <option value="I+D+I">I+D+I</option>
-                                    <option value="Sig">Sig</option>
-                                    <option value="Compras">Compras</option>
-                                    <option value="Financiera">Financiera</option>
-                                    <option value="Jurídico">Jurídico</option>
-                                    <option value="Gestión Comercial">Gestión Comercial</option>
-                                    <option value="Gestión estratégica">Gestión estratégica</option>
-                                    <option value="Gestión proyectos operaciones">Gestión proyectos operaciones</option>
-                                    <option value="Control interno">Control interno</option>
-                                    <option value="Gobierno corporativo">Gobierno corporativo</option>
-                                </select>
-
-                                @error('area')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                                @enderror
+                                <div>
+                                    <input type="checkbox" id="Evaluacion y control" name="procesos[]" value="Evaluacion y control" />
+                                    <label for="Evaluacion y control">Evaluación & control</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" id="Gestion estrategica" name="procesos[]" value="Gestion estrategica" />
+                                    <label for="Gestion estrategica">Gestión estratégica</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" id="Gobierno corporativo" name="procesos[]" value="Gobierno corporativo" />
+                                    <label for="Gobierno corporativo">Gobierno corporativo</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" id="Gestion proyectos operaciones" name="procesos[]" value="Gestion proyectos operaciones" />
+                                    <label for="Gestion proyectos operaciones">Gestión proyectos operaciones</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" id="Gestion comercial" name="procesos[]" value="Gestion comercial" />
+                                    <label for="Gestion comercial">Gestión comercial</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" id="Gestion administrativa y financiera" name="procesos[]" value="Gestion administrativa y financiera" />
+                                    <label for="Gestion administrativa y financiera">Gestión administrativa & financiera</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" id="Innovacion y tecnologia" name="procesos[]" value="Innovacion y tecnologia" />
+                                    <label for="Innovacion y tecnologia">Innovación & tecnologia</label>
+                                </div>
                             </div>
                         </div>
 

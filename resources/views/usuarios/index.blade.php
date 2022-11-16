@@ -12,7 +12,7 @@
                 <th scope="col">Ciudad</th>
                 <th scope="col">Correo</th>
                 <th scope="col">Rol</th>
-                <th scope="col">Area</th>
+                <th scope="col">Proceso(s)</th>
                 <th scope="col">Opciones</th>
             </tr>
         </thead>
@@ -25,7 +25,13 @@
                 <td>{{$usuario->ciudad}}</td>
                 <td>{{$usuario->email}}</td>
                 <td>{{$usuario->rol}}</td>
-                <td>{{$usuario->area}}</td>
+                <td><ol>
+                    @foreach (explode('|', $usuario->area) as $item)
+                    @if ($item != '')
+                        <li>{{$item}}</li>
+                    @endif
+                @endforeach
+                </ol></td>
                 <td><a type="button" class="btn btn-warning" href="{{ route('usuarios.edit',$usuario) }}">Editar</a>
                     <button type="submit" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#eliminarUsuario{{ $usuario->id }}">
                         Eliminar

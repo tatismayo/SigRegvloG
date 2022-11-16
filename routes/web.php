@@ -43,41 +43,45 @@ Route::get('/modulos', function () {
     return view('modulos.index');
 })->middleware('auth');
 
-Route::get('/modulos/{submodulo}', function () {
-    $submodulo = explode('/', URL::current())[4];
-    return view('modulos.submodulo', compact('submodulo'));
-})->middleware('auth');
+Route::get('/modulos/{modulo}/{submodulo}', ['middleware' => 'procesos:'.URL::current(), function () {
+    $modulo = explode('/', URL::current())[4];
+    $submodulo = explode('/', URL::current())[5];
+    return view('modulos.submodulo', compact('modulo','submodulo'));
+}]);
 
-Route::get('/modulos/{submodulo}/{documentos}', function (Request $request) {
-    $submodulo = explode('/', URL::current())[4];
-    $tipo = explode('/', URL::current())[5];
+Route::get('/modulos/{modulo}/{submodulo}/{documentos}', ['middleware' => 'procesos:'.URL::current(), function (Request $request) {
+    $modulo = explode('/', URL::current())[4];
+    $submodulo = explode('/', URL::current())[5];
+    $tipo = explode('/', URL::current())[6];
     $busqueda = trim($request->get('busqueda'));
     $documentos = Documento::where('submoduloDoc', '=', $submodulo)
                 ->where('tipoDoc', '=', $tipo)
                 ->where('estadoDoc', '!=', 'Pendiente Revisión')
                 ->where('nombreDoc', 'LIKE','%'.$busqueda.'%')
                 ->paginate(40);
-    return view('modulos.document', compact('submodulo', 'documentos', 'tipo', 'busqueda'));
-})->name('documentos')->middleware('auth');
+    return view('modulos.document', compact('modulo','submodulo', 'documentos', 'tipo', 'busqueda'));
+}])->name('documentos');
 
 Route::resource('/documentos', DocumentoController::class);
 
-Route::get('/modulos/{submodulo}/{documentos}/create', function (Request $request) {
-    $submodulo = explode('/', URL::current())[4];
-    $tipo = explode('/', URL::current())[5];
-    return view('documentos.crear', compact('submodulo', 'tipo'));
-});
+Route::get('/modulos/{modulo}/{submodulo}/{documentos}/create', function (Request $request) {
+    $modulo = explode('/', URL::current())[4];
+    $submodulo = explode('/', URL::current())[5];
+    $tipo = explode('/', URL::current())[6];
+    return view('documentos.crear', compact('modulo', 'submodulo', 'tipo'));
+})->middleware('gestor');;
 
-Route::get('/modulos/{submodulo}/{documentos}/revisar', function (Request $request) {
-    $submodulo = explode('/', URL::current())[4];
-    $tipo = explode('/', URL::current())[5];
+Route::get('/modulos/{modulo}/{submodulo}/{documentos}/revisar', function (Request $request) {
+    $modulo = explode('/', URL::current())[4];
+    $submodulo = explode('/', URL::current())[5];
+    $tipo = explode('/', URL::current())[6];
     $busqueda = trim($request->get('busqueda'));
     $documentos = Documento::where('submoduloDoc', '=', $submodulo)
                 ->where('tipoDoc', '=', $tipo)
                 ->where('estadoDoc', '=', 'Pendiente Revisión')
                 ->where('nombreDoc', 'LIKE','%'.$busqueda.'%')
                 ->paginate(40);
-    return view('documentos.revisar', compact('submodulo', 'documentos', 'tipo', 'busqueda'));
+    return view('documentos.revisar', compact('modulo', 'submodulo', 'documentos', 'tipo', 'busqueda'));
 })->middleware('admin');
 
 
