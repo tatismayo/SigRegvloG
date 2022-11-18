@@ -9,6 +9,12 @@ use Illuminate\Support\Facades\Redirect;
 
 class NoticiaController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+        $this->middleware('noticias');
+    }
     /**
      * Display a listing of the resource.
      *

@@ -117,7 +117,7 @@ class DocumentoController extends Controller
 
     public function obsoleto(Request $request, Documento $documento)
     {
-        $documento->tipoDoc = $documento->tipoDoc.'Obsoleto';
+        $documento->estadoDoc = 'Obsoleto';
         $documento->save();
         return redirect()->back()->with('success', 'Documento marcado como obsoleto');
     }

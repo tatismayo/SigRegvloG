@@ -51,6 +51,8 @@ class UsuariosController extends Controller
         $user->ciudad = $request->ciudad;
         $user->email = $request->email;
         $request->validate([
+            'email' => 'unique:users',
+            'procesos' => 'required',
             'password' => 'required|confirmed|min:6'
         ]);
         $user->password = Hash::make($request->password);
@@ -95,6 +97,9 @@ class UsuariosController extends Controller
      */
     public function update(Request $request, User $usuario)
     {
+        $request->validate([
+            'procesos' => 'required'
+        ]);
         $usuario->name = $request->name;
         $usuario->cedula = $request->cedula;
         $usuario->telefono = $request->telefono;

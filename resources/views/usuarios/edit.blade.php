@@ -89,6 +89,7 @@
                                 <select class="form-control" id="rol" class="form-control @error('rol') is-invalid @enderror" name="rol" required>
                                     <option value="Empleado">Empleado</option>
                                     <option value="Gestor">Gestor</option>
+                                    <option value="Noticias">Noticias</option>
                                     <option value="Administrador">Administrador</option>
                                 </select>
 

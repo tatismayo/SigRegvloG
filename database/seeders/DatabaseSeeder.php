@@ -23,7 +23,7 @@ class DatabaseSeeder extends Seeder
             'email' => 'tatismayo@hotmail.com',
             'password' => Hash::make('Manizales'),
             'rol' => 'Administrador',
-            'area' => 'Sistemas'
+            'area' => 'Evaluacion y control|Gestion estrategica|Gobierno corporativo|Gestion proyectos operaciones|Gestion comercial|Gestion administrativa y financiera|Innovacion y tecnologia|'
         ]);
     }
 }
